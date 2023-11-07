@@ -1,0 +1,38 @@
+
+div > button{
+  background-color: #4056A1;
+  outline: none;
+  color: #FFFFFF;
+  font-family: 'bungee', sans-serif;
+}
+
+output{
+  color: #4056A1;
+  font-family: 'bungee', sans-serif;
+}
+
+textarea{
+  resize: none;
+  outline: none;
+  border: 0px solid #cdcdcd;
+  background-color: #f4f1ec;
+  border-bottom: solid;
+  border-bottom-color: #545149;
+  height: 5em;
+}
+
+.new-tweet{
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+div{
+  display: flex;
+  padding-top: 0.05em;
+  justify-content: space-between;
+}

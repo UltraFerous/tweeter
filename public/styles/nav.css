@@ -1,0 +1,27 @@
+nav{
+  height: 120px;
+  margin: 0 0 0 0;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  position: fixed;
+  position: fixed;
+  left: 0;      /* ADDED */
+  top: 0;       /* ADDED */
+  width: 100%;  /* ADDED */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1.5em 0 1.5em;
+}
+
+span{
+  font-family: 'bungee', sans-serif;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
