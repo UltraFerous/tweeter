@@ -2,7 +2,7 @@ $(document).ready(function() {
   // --- our code goes here ---
   console.log("READY!");
 
-  $("#tweet-text").keyup(function(e) {
+  $("#tweet-text").on("input", function(e) {
     // console.log(e.originalEvent.key);
     // console.log(140 - this.textLength);
 

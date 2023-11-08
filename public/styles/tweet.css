@@ -28,7 +28,7 @@ main>article>footer {
   margin-bottom: 0.5%;
 }
 
-main>article>div {
+.tweet-text-data {
   margin-top: 2%;
   width: 98%;
 }
@@ -37,4 +37,13 @@ main>article>footer>div {
   display: flex;
   justify-content: flex-end;
   letter-spacing: 0.1em;
+}
+
+main>article>header>div{
+  display: flex;
+  justify-content: flex-start
+}
+
+main>article>header>div>div{
+  padding-left: 0.5em;
 }
