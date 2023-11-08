@@ -3,11 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 const renderTweets = function(tweets, callback) {
   let tweet = {};
   for (let data in tweets) {
     newTweet = callback(tweets[data]);
-    $(".container").append(newTweet);
+    $(newTweet).insertAfter(".tweets");
+    // $(".container").prepend(newTweet);
   }
 };
 
@@ -27,7 +29,7 @@ const createTweetElement = function(tweetData) {
   ${tweetData.content.text}  
   </div>
   <footer>
-  ${tweetData.created_at}  
+  ${timeago.format(tweetData.created_at, 'en_US')}
     <div>
       <div class="report">
         <i class="fa-solid fa-flag"></i>
@@ -48,7 +50,7 @@ const loadTweets = function() {
   $.ajax({
     type: 'GET',
     url: '/tweets/',
-  }).then(function(data) { 
+  }).then(function(data) {
     console.log("DATA RECIVED!");
     renderTweets(data, createTweetElement);
   });
@@ -59,19 +61,16 @@ $(document).ready(function() {
   loadTweets();
   $("form").on("submit", function(event) {
     let outputData = $("form").serialize();
+    if(outputData.length > 140){
+      alert("Tweets must be less than 140 characters!");
+      return
+    }
     event.preventDefault();
     $.ajax({
       type: 'POST',
       url: '/tweets/',
       data: outputData,
     }).then((data) => { console.log("GOOD!"); });
-    alert(outputData);
-  });
-
-  $("article").hover(function() {
-    $(this).css('box-shadow', '10px 10px 0px #586ebc');
-  }, function() {
-    $(this).css('box-shadow', '0px 0px 0px #586ebc');
   });
 
   $(".report").hover(function() {
