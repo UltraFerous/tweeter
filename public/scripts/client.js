@@ -67,7 +67,7 @@ $(document).ready(function() {
         type: 'POST',
         url: '/tweets/',
         data: outputData,
-      }).then((data) => { console.log("GOOD!"); });
+      }).then((data) => { loadTweets(); console.log("GOOD!"); });
     }
     if (outputData.length >= 146) {
       alert("Tweets must be less than 140 characters!");
