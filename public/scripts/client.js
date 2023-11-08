@@ -61,16 +61,20 @@ $(document).ready(function() {
   loadTweets();
   $("form").on("submit", function(event) {
     let outputData = $("form").serialize();
-    if(outputData.length > 140){
-      alert("Tweets must be less than 140 characters!");
-      return
-    }
     event.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '/tweets/',
-      data: outputData,
-    }).then((data) => { console.log("GOOD!"); });
+    if (outputData.length < 146 && outputData.length > 5) {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets/',
+        data: outputData,
+      }).then((data) => { console.log("GOOD!"); });
+    }
+    if (outputData.length >= 146) {
+      alert("Tweets must be less than 140 characters!");
+    }
+    if (outputData.length <= 5 || outputData === null || outputData === undefined) {
+      alert("Please include text to tweet!");
+    }
   });
 
   $(".report").hover(function() {
