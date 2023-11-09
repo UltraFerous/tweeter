@@ -13,3 +13,14 @@ body > header {
   color: #f4f1ec;
 
 }
+
+
+@media only screen and (min-width: 1024px) {
+  body > header{
+    display: flex;
+    height: 25em;
+    border-radius: 10px;
+    width: 75%;
+    margin-right: 1em;
+  }
+}

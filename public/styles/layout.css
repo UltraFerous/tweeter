@@ -33,5 +33,31 @@ body {
 
   /* margin-left: 5%;
   margin-right: 5%; */
-
  }
+
+   /* Laptops / Desktops: minimum width of 1024px */
+   @media only screen and (min-width: 1024px) {
+    /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+    body{
+      margin-top: 5em;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    
+    body > main{
+      width: 100%;
+    }
+
+
+
+    .tweet{
+      width: 100%;
+    }
+
+    .tweets{
+      width: 100%;
+    }
+  }
