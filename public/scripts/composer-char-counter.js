@@ -15,13 +15,12 @@ $(document).ready(function() {
     counterSection[0].innerHTML = (140 - this.textLength);
 
     if (140 - this.textLength < 0) {
-      counterSection.css('color', '#BC586E');;
+      counterSection.addClass("overflowText");
     }
 
     if (140 - this.textLength >= 0) {
-      counterSection.css('color', '#586ebc');;
+      counterSection.removeClass("overflowText");
     }
   });
-
 });
 

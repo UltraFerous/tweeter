@@ -43,3 +43,7 @@ div{
 main > section{
   width: 100%;
 }
+
+.overflowText{
+  color: #BC586E;
+}
