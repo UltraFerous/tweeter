@@ -66,19 +66,22 @@ $(document).ready(function() {
   loadTweets();
   $("form").on("submit", function(event) {
     let outputData = $("form").serialize();
+    if (outputData.length >= 146) {
+      $(".error").text("Error: This tweet is too long!");
+      $(".error").css('visibility', 'visible').hide().stop().slideDown();
+    }
+    if (outputData.length <= 5 || outputData === null || outputData === undefined) {
+      $(".error").text("Error: There is no input!");
+      $(".error").css('visibility', 'visible').hide().stop().slideDown();
+    }
     event.preventDefault();
     if (outputData.length < 146 && outputData.length > 5) {
+      $(".error").css('visibility','visible').stop().slideUp();
       $.ajax({
         type: 'POST',
         url: '/tweets/',
         data: outputData,
       }).then((data) => { loadTweets(); console.log("GOOD!"); });
-    }
-    if (outputData.length >= 146) {
-      alert("Tweets must be less than 140 characters!");
-    }
-    if (outputData.length <= 5 || outputData === null || outputData === undefined) {
-      alert("Please include text to tweet!");
     }
   });
 
