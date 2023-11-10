@@ -61,11 +61,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  main>article>footer>div{
-    /* padding-top: 3px;
-    letter-spacing: 0.25em; */
-    /* height: 1.5em; */
-  }
   .tweet>footer>div>.retweet{
     font-size: 1.25em;
   }
