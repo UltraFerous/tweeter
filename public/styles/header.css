@@ -1,4 +1,4 @@
-body > header {
+body>header {
   margin-top: 120px;
   height: 400px;
 
@@ -11,12 +11,11 @@ body > header {
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);
 
   color: #f4f1ec;
-
 }
 
-
 @media only screen and (min-width: 1024px) {
-  body > header{
+  body>header {
+    margin-top: 115px;
     display: flex;
     height: 25em;
     border-radius: 10px;

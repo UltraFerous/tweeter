@@ -1,23 +1,26 @@
-main>article>header {
+.tweet>header {
   margin-top: 0.5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 98%;
-
 }
 
-main>article {
+.tweets{
+  width: 100%;
+}
+
+.tweet> {
   margin-top: 1%;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid;
-  border-color: #545149;
+  /* border: solid;
+  border-color: #545149; */
 }
 
-main>article>footer {
+.tweet>footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,34 +36,43 @@ main>article>footer {
   width: 98%;
 }
 
-main>article>footer>div {
+.tweet>footer>div {
   display: flex;
   justify-content: flex-end;
   letter-spacing: 0.1em;
 }
 
-main>article>header>div {
+.tweet>header>div {
   display: flex;
   justify-content: flex-start
 }
 
-main>article>header>div>div {
+.tweet>header>div>div {
   padding-left: 0.5em;
+}
+
+.tweet{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border: 0.2em solid #545149;
+  border-radius: 1%;
+  padding: 0.5em;   
+  width: 100%;
 }
 
 @media only screen and (min-width: 1024px) {
   main>article>footer>div{
-    padding-top: 3px;
-    letter-spacing: 0.25em;
-    height: 1.5em;
+    /* padding-top: 3px;
+    letter-spacing: 0.25em; */
+    /* height: 1.5em; */
   }
-  main>article>footer>div>.retweet{
+  .tweet>footer>div>.retweet{
     font-size: 1.25em;
   }
-  main>article>footer>div>.like{
+  .tweet>footer>div>.like{
     font-size: 1.25em;
   }
-  main>article>footer>div>.report{
+  .tweet>footer>div>.report{
     font-size: 1.25em;
   }
 }

@@ -3,6 +3,7 @@ div>button {
   outline: none;
   color: #FFFFFF;
   font-family: 'bungee', sans-serif;
+  margin-bottom: 0.5em;
 }
 
 output {
@@ -24,6 +25,8 @@ textarea {
 .new-tweet {
   display: flex;
   flex-direction: column;
+  border-radius: 1%;
+  border: 0.2em solid #545149;
 }
 
 form {
@@ -51,7 +54,6 @@ main>section {
   justify-content: center;
   color: #FFFFFF;
   background-color: #BC586E;
-  /* border: 0.2em solid #BC586E; */
   width: 90%;
   margin-top: 0.5em;
   margin-bottom: 0.05em;
@@ -63,10 +65,10 @@ main>section {
 }
 
 @media only screen and (min-width: 1024px) {
-  h2{
+  main>h2 {
     display: none;
   }
-  main{
+  main {
     margin-top: 4.8em;
   }
 }
