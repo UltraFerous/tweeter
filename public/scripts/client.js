@@ -81,6 +81,11 @@ const attachButtonLogic = function() {
   }, function() {
     $(this).css('color', '#545149');
   });
+  $(".tweet").hover(function() {
+    $(this).addClass("hoverShadow");
+  }, function() {
+    $(this).removeClass("hoverShadow");
+  });
 };
 
 $(document).ready(function() {

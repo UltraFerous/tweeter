@@ -34,6 +34,10 @@ main {
   flex-direction: column;
 }
 
+.hoverShadow{
+  box-shadow: 0.25em 0.25em 0px 0px #4056A1;
+}
+
 /* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
 
