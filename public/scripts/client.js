@@ -15,6 +15,7 @@ const renderTweets = function(tweets, callback) {
   for (let data in tweets) {
     newTweet = callback(tweets[data]);
     $(newTweet).insertAfter(".tweets");
+    attachButtonLogic();
   }
 };
 
@@ -61,30 +62,7 @@ const loadTweets = function() {
   });
 };
 
-$(document).ready(function() {
-  // --- our code goes here ---
-  loadTweets();
-  $("form").on("submit", function(event) {
-    let outputData = $("form").serialize();
-    if (outputData.length >= 146) {
-      $(".error").text("Error: This tweet is too long!");
-      $(".error").css('visibility', 'visible').hide().stop().slideDown();
-    }
-    if (outputData.length <= 5 || outputData === null || outputData === undefined) {
-      $(".error").text("Error: There is no input!");
-      $(".error").css('visibility', 'visible').hide().stop().slideDown();
-    }
-    event.preventDefault();
-    if (outputData.length < 146 && outputData.length > 5) {
-      $(".error").css('visibility','visible').stop().slideUp();
-      $.ajax({
-        type: 'POST',
-        url: '/tweets/',
-        data: outputData,
-      }).then((data) => { loadTweets(); console.log("GOOD!"); });
-    }
-  });
-
+const attachButtonLogic = function(){
   $(".report").hover(function() {
     $(this).css('color', '#BC586E');
   }, function() {
@@ -101,6 +79,32 @@ $(document).ready(function() {
     $(this).css('color', '#BC586E');
   }, function() {
     $(this).css('color', '#545149');
+  });
+}
+
+$(document).ready(function() {
+  // --- our code goes here ---
+  console.log("Ready!")
+  loadTweets();
+  $("form").on("submit", function(event) {
+    let outputData = $("form").serialize();
+    if (outputData.length >= 146) {
+      $(".error").text("Error: This tweet is too long!");
+      $(".error").animate({height: 'show'});
+    }
+    if (outputData.length <= 5 || outputData === null || outputData === undefined) {
+      $(".error").text("Error: There is no input!");
+      $(".error").animate({height: 'show'});
+    }
+    event.preventDefault();
+    if (outputData.length < 146 && outputData.length > 5) {
+      $(".error").animate({height: 'hide'})
+      $.ajax({
+        type: 'POST',
+        url: '/tweets/',
+        data: outputData,
+      }).then((data) => { loadTweets(); console.log("GOOD!"); });
+    }
   });
 });
 

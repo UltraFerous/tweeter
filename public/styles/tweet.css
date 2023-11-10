@@ -39,11 +39,28 @@ main>article>footer>div {
   letter-spacing: 0.1em;
 }
 
-main>article>header>div{
+main>article>header>div {
   display: flex;
   justify-content: flex-start
 }
 
-main>article>header>div>div{
+main>article>header>div>div {
   padding-left: 0.5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  main>article>footer>div{
+    padding-top: 3px;
+    letter-spacing: 0.25em;
+    height: 1.5em;
+  }
+  main>article>footer>div>.retweet{
+    font-size: 1.25em;
+  }
+  main>article>footer>div>.like{
+    font-size: 1.25em;
+  }
+  main>article>footer>div>.report{
+    font-size: 1.25em;
+  }
 }

@@ -1,17 +1,16 @@
-
-div > button{
+div>button {
   background-color: #4056A1;
   outline: none;
   color: #FFFFFF;
   font-family: 'bungee', sans-serif;
 }
 
-output{
+output {
   color: #4056A1;
   font-family: 'bungee', sans-serif;
 }
 
-textarea{
+textarea {
   resize: none;
   outline: none;
   border: 0px solid #cdcdcd;
@@ -22,40 +21,52 @@ textarea{
   width: 100%;
 }
 
-.new-tweet{
+.new-tweet {
   display: flex;
   flex-direction: column;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   width: 90%;
 }
 
-div{
+div {
   display: flex;
   padding-top: 0.05em;
   justify-content: space-between;
 }
 
-main > section{
+main>section {
   width: 100%;
 }
 
-.overflowText{
+.overflowText {
   color: #BC586E;
 }
 
-.error{
-  display: flex;
+.error {
+  display: none;
   justify-content: center;
-  color: #BC586E;
-  border: 0.2em solid #BC586E;
+  color: #FFFFFF;
+  background-color: #BC586E;
+  /* border: 0.2em solid #BC586E; */
   width: 90%;
+  margin-top: 0.5em;
   margin-bottom: 0.05em;
+  border-radius: 0.25em;
 }
 
-.hidden{
+.hidden {
   visibility: hidden;
+}
+
+@media only screen and (min-width: 1024px) {
+  h2{
+    display: none;
+  }
+  main{
+    margin-top: 4.8em;
+  }
 }

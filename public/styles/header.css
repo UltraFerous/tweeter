@@ -20,7 +20,7 @@ body > header {
     display: flex;
     height: 25em;
     border-radius: 10px;
-    width: 75%;
+    width: 50%;
     margin-right: 1em;
   }
 }
