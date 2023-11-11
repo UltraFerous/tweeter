@@ -20,6 +20,10 @@ const renderTweets = function(tweets, callback) {
   }
 };
 
+const clearForm = function(){
+  $("#tweet-text").reset();
+}
+
 const createTweetElement = function(tweetData) {
   let $tweetElement =
     `<article class="tweet">
@@ -61,6 +65,7 @@ const loadTweets = function() {
     $('.tweets').empty();
     renderTweets(data, createTweetElement);
   });
+  clearForm();
 };
 
 const attachButtonLogic = function() {
