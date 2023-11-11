@@ -14,15 +14,16 @@ const renderTweets = function(tweets, callback) {
   let newTweet;
   for (let data in tweets) {
     newTweet = callback(tweets[data]);
-    $(".tweets").prepend(newTweet)
+    $(".tweets").prepend(newTweet);
     // $(newTweet).appendChild$(".tweets");
     attachButtonLogic();
   }
 };
 
-const clearForm = function(){
-  $("#tweet-text").reset();
-}
+const clearForm = function() {
+  $("#tweet-text").val('');
+  $("#tweet-text").trigger("input");
+};
 
 const createTweetElement = function(tweetData) {
   let $tweetElement =
@@ -65,7 +66,6 @@ const loadTweets = function() {
     $('.tweets').empty();
     renderTweets(data, createTweetElement);
   });
-  clearForm();
 };
 
 const attachButtonLogic = function() {
@@ -114,10 +114,10 @@ $(document).ready(function() {
         type: 'POST',
         url: '/tweets/',
         data: outputData,
-      }).then((data) => { 
-
-        console.log(data);
-        loadTweets(); });
+      }).then((data) => {
+        loadTweets();
+        clearForm();
+      });
     }
   });
 });
